@@ -141,7 +141,7 @@ internal static class Program
 
 
 
-		app.MapPost("/security/getToken", [AllowAnonymous] (UserDto user) =>
+		app.MapPost("/GetToken", [AllowAnonymous] (UserDto user) =>
 		{
 
 			if (user.UserName=="admin@mohamadlawand.com" && user.Password=="P@ssword")
