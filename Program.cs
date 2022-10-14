@@ -181,7 +181,7 @@ internal static class Program
 			}
 		});
 
-		app.MapGet("/UseToken", [Authorize] () =>
+		app.MapGet("/UseToken", [Authorize(AuthenticationSchemes = "Bearer")] () =>
 		{
 			return Results.Ok();
 		});
