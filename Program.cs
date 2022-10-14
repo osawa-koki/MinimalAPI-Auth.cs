@@ -34,16 +34,7 @@ var securityReq = new OpenApiSecurityRequirement()
 
 
 
-// CORS許可
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "CORS_RULE_NAME",
-        builder =>
-        {
-            builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
-        }
-    );
-});
+
 
 
 // Configure JSON options.
@@ -76,8 +67,8 @@ builder.Services.AddSwaggerGen(options =>
             Url = new Uri("https://example.com/license")
         }
     });
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    // var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    // options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
     options.AddSecurityDefinition("Bearer", securityScheme);
     options.AddSecurityRequirement(securityReq);
 });
@@ -92,8 +83,7 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
-// CORS許可
-app.UseCors("CORS_RULE_NAME");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
