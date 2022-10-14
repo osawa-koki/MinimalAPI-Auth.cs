@@ -33,7 +33,7 @@ internal static class Program
 			Name = "Authorization",
 			Type = SecuritySchemeType.ApiKey,
 			Scheme = "Bearer",
-			BearerFormat = "OAuth",
+			BearerFormat = "JWT",
 			In = ParameterLocation.Header,
 			Description = "API Authentication System",
 		};
@@ -53,6 +53,7 @@ internal static class Program
 			}
 		};
 
+		builder.Services.AddEndpointsApiExplorer();
 
 
 		// Add JWT configuration
@@ -75,9 +76,6 @@ internal static class Program
 				ValidateIssuerSigningKey = true
 			};
 		});
-
-		builder.Services.AddAuthorization();
-		builder.Services.AddEndpointsApiExplorer();
 
 
 		// Configure JSON options.
@@ -116,7 +114,8 @@ internal static class Program
 			options.AddSecurityRequirement(securityReq);
 		});
 
-
+		builder.Services.AddAuthorization();
+		builder.Services.AddEndpointsApiExplorer();
 
 		var app = builder.Build();
 
@@ -139,7 +138,8 @@ internal static class Program
 
 		app.MapControllers();
 
-
+		app.UseAuthentication();
+		app.UseAuthorization();
 
 		app.MapPost("/GetToken", [AllowAnonymous] (UserDto user) =>
 		{
@@ -193,7 +193,10 @@ internal static class Program
 			}
 		});
 
-
+		app.MapGet("/UseToken", [Authorize] () =>
+		{
+			return Results.Ok();
+		});
 
 		app.Run();
 	}
