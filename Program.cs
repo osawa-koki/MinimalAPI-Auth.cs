@@ -1,18 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Text.Json;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
-using System;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Hosting;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
