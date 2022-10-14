@@ -28,7 +28,7 @@ var securityScheme = new OpenApiSecurityScheme()
     Scheme = "Bearer",
     BearerFormat = "OAuth",
     In = ParameterLocation.Header,
-    Description = "JSON Web Token based security",
+    Description = "API Authentication System",
 };
 
 var securityReq = new OpenApiSecurityRequirement()
