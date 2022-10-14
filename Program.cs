@@ -144,7 +144,7 @@ internal static class Program
 		app.MapPost("/GetToken", [AllowAnonymous] (UserDto user) =>
 		{
 
-			if (user.UserName=="admin@mohamadlawand.com" && user.Password=="P@ssword")
+			if (user.UserName=="uid" && user.Password=="pw")
 			{
 				var issuer = builder.Configuration["Jwt:Issuer"];
 				var audience = builder.Configuration["Jwt:Audience"];
