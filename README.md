@@ -32,3 +32,6 @@ dotnet run
 - [MinimalAPIの概要](https://learn.microsoft.com/ja-jp/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)
 
 
+- [jwt](https://dev.to/moe23/net-6-minimal-api-authentication-jwt-with-swagger-and-open-api-2chh)
+- [jwt](https://bytelanguage.net/2021/07/30/net-6-jwt-authentication-in-minimal-web-api/)
+
