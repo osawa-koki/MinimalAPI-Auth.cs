@@ -1,3 +1,6 @@
+obj/
+bin/
+
 # Created by https://www.toptal.com/developers/gitignore/api/linux,windows,visualstudio,visualstudiocode,csharp
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,visualstudio,visualstudiocode,csharp
 
