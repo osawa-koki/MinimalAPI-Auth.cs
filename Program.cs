@@ -109,13 +109,7 @@ builder.Services.AddSwaggerGen(options =>
     options.AddSecurityRequirement(securityReq);
 });
 
-// Cookieの設定
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(options =>
-{
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+
 
 var app = builder.Build();
 
